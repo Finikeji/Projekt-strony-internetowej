@@ -1,13 +1,12 @@
-from flask import Flask, render_template, \
-    request, redirect, url_for
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route('/')    #przekierowanie na strone 
+@app.route('/')    
 def strona_glowna():
-    return render_template("strona_glowna.html") #render zwraca strony, wszystko z html w katalogu template musi byc
+    return render_template("strona_glowna.html") 
 
-@app.route('/granicefunkcji/twierdzenia')  # Nowa trasa dla strony z twierdzeniami dla granic ciagow
+@app.route('/granicefunkcji/twierdzenia') 
 def twierdzenia():
     return render_template("twierdzenia_funkcje.html")
 
@@ -31,5 +30,3 @@ def wzorywlasnosci_ciagi():
 def przyklady_ciagi():
     return render_template("przyklady_ciagi.html")
 
-# if __name__ == '__main__':
-#     app.run(debug=True)

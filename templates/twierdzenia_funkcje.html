@@ -19,10 +19,7 @@
                     <li><h3>Granice funkcji</h3>
                         <ul class="submenu">
                             <li><a href="{{ url_for('twierdzenia') }}">Twierdzenia</a></li>
-                            <!-- <li><a href="#">Twierdzenia</a></li> -->
                             <li><a href="{{ url_for('wzorywlasnosci') }}">Wzory, własności</a></li>
-                            <!-- <li><a href="#">Wzory, własności</a></li> -->
-                            <!-- <li><a href="#">Przykłady</a></li> -->
                             <li><a href="{{ url_for('przyklady_funkcje') }}">Przykłady</a></li>
                         </ul>
                     </li>
@@ -31,9 +28,6 @@
                             <li><a href="{{ url_for('twierdzenia_ciagi') }}">Twierdzenia</a></li>
                             <li><a href="{{ url_for('wzorywlasnosci_ciagi') }}">Wzory i własności</a></li>
                             <li><a href="{{ url_for('przyklady_ciagi') }}">Przykłady</a></li>
-                            <!-- <li><a href="#">Twierdzenia</a></li> -->
-                            <!-- <li><a href="#">Wzory, własności</a></li>
-                            <li><a href="#">Przykłady</a></li> -->
                         </ul>
                     </li>
                 </ul>
@@ -43,8 +37,27 @@
                     <li><strong>Granica w punkcie</strong></li>
                     Funkcja \(f: A \to \mathbb{R}\) określona na zbiorze \(A \subseteq \mathbb{R}\) ma w punkcie skupienia \(x_0\) tego zbioru granicę równą \(g\), jeżeli spełniony jest jeden z równoważnych warunków<br>
                     <ul>
-                    <br>
-                        <li><strong>definicja Heinego</strong><br>dla każdego ciągu \((x_n)\) takiego, że dla dowolnego \(n \in \mathbb{N}, x_n \in A, x_n \neq x_0\) oraz \(x_n\) dąży do \(x_0\), ciąg wartości funkcji \((f(x_n))\) dąży do \(g\) gdy \(n \to \infty\);</li>
+                        <li><p><strong>definicja Heinego</strong></p>
+                            dla każdego ciągu \((x_n)\) takiego, że dla dowolnego \(n \in \mathbb{N}, x_n \in A, x_n \neq x_0\) oraz \(x_n\) dąży do \(x_0\), ciąg wartości funkcji \((f(x_n))\) dąży do \(g\) gdy \(n \to \infty\);</li>
+                        <li><p><strong>definicja Cauchy'ego</strong></p>
+                            dla każdej liczby \(\varepsilon \gt 0\) istnieje liczba \(\delta \gt 0\) taka, że dla każdego \(x \in A\) z nierówności \(0 \lt |x - x_0| \lt \delta\) wynika nierówność \(|f(x) - g| \lt \varepsilon\).</li>
+                    </ul>
+                    <li style="margin-top: 40px;"><strong>Granica niewłaściwa</strong></li>
+                    Funkcja \(f\) ma w punkcie \(x_0\) granicę niewłaściwą \(+\infty\), co zapisuje się
+                    <p>\(\displaystyle f(x) \to +\infty \quad\) przy \(\displaystyle \quad x \to x_0 \)	lub \(\displaystyle\lim_{x \to x_0} f(x) = +\infty\), 
+                    <p>gdy spełnione są warunki, określone w jakiejkolwiek z następujących dwu równoważnych definicji:</p>
+                    <ul>
+                        <li><p><strong>definicja Heinego</strong></p>
+                            dla każdego ciągu \((x_n)\) takiego, że \(x_n \in A\), \(x_n \neq x_0\) oraz \(\lim_{n \to \infty} x_n = x_0\) ciąg wartości funkcji \((f(x_n))\) dąży do \(+\infty\): \(\displaystyle f(x) \to +\infty \quad\)  przy \(\displaystyle \quad x \to x_0;\)</li>
+                        <li><p><strong>definicja Cauchy'ego</strong></p></li>
+                        <p>\(\displaystyle \forall M \gt 0 \; \exists \delta \gt 0 \; \forall x \in A \left( 0 \lt |x - x_0| \lt \delta \implies f(x) \gt M \right).\)</p>
+                        Analogicznie definiuje się i oznacza się granicę niewłaściwą \(-\infty\): trzeba tylko wszędzie zamienić \(+\infty\) na \(-\infty\), a definicję Cauchy'ego zapisać tak:
+                        <p>\(\displaystyle \forall M \gt 0 \; \exists \delta \gt 0 \; \forall x \in A \left( 0 \lt |x - x_0| \lt \delta \implies f(x) \lt -M \right).\)</p>
+                    </ul>
+                    <li style="margin-top: 40px;"><strong>Twierdzenie o 3 funkcjach</strong></li>
+                    Jeżeli funkcje \( f \), \( g \), \( h \) dla każdego \( x \) z otoczenia \( x_0 \) spełniają nierówność
+                    <p style="text-align: center;">\(\displaystyle f(x) \leq g(x) \leq h(x)\)</p> i dodatkowo \(\displaystyle \lim_{x \to x_0} f(x) = p\) oraz \(\displaystyle \lim_{x \to x_0} h(x) = p,\) to również \(\displaystyle \lim_{x \to x_0} g(x) = p.\)
+                    <p>Zamiast punktu \( x_0 \) może być \(\infty\) lub \(-\infty\).</p>
             </div>
         </div>
     </body>

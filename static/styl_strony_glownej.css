@@ -13,26 +13,19 @@ body{
 #naglowek{
     text-align: center;
     background-color: #FFDEAD; 
-    /* przezroczystosc */
     margin: 10px;
     margin-top: 20px;
-    /* gorny margines dla tla z naglowkiem; marginesy zewnetrzne */
     padding-top: 10px;
-    /* odstep wewnatrz */
     border: ridge;
     border-color: #000000;
-    /* obramowanie */
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
-    /* zaokraglenie dolnych krawedzi */
-    /* position: fixed; przy scrollowaniu naglowek zostaje */ 
     height: 100px;
-    width: 90%; /* Szerokość nagłówka */
+    width: 90%; 
     max-width: 1200px;
     z-index: 2;
-    /* dluzszy dol naglowka */
 }
 
 
@@ -45,7 +38,7 @@ body{
     border-radius: 50px;
     border: ridge;
     border-color: #000000;
-    overflow: hidden; /* Chcemy, aby #menu i .tresc zajmowały całą wysokość panelu */
+    overflow: hidden; 
 }
 
 .tresc {
@@ -127,11 +120,11 @@ body{
 }
 
 .submenu li a:hover {
-    background-color: #f09692; /* Zmieniamy kolor tła na najechanie */
+    background-color: #f09692; 
 }
 
 li {
-    margin-bottom: 30px; /*  odstęp między elementami listy */
+    margin-bottom: 30px; /
 }
 
 .content {
@@ -145,10 +138,11 @@ li {
     max-width: 150px;
     height: auto;
     border: 1px solid #ddd;
-    border-radius: 5px;     /*obramowanie zdjecia*/
+    border-radius: 5px;    
 }   
 
-.content p {
-    flex: 1;
+.rozwiazanie {
+    display: none;
+    margin-top: 10px;
+    margin-bottom: 60px;
 }
-
