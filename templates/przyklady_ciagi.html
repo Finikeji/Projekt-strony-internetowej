@@ -1,71 +1,115 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obliczanie Granic Funkcji</title>
-    <style>
-        .rozwiazanie {
-            display: none;
+    <title>Przykłady</title>  
+    <meta charset="utf-8">
+    <link href="{{ url_for('static', filename='styl_strony_glownej.css') }}" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- JavaScript dla przycisków "Pokaż rozwiązanie" -->
+    <script>
+        function toggleSolution(index) {
+            var solution = document.getElementById('solution-' + index);
+            if (solution.style.display === 'none') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
         }
-        .pokaz-button {
-            cursor: pointer;
-            color: white;
-            background-color: blue;
-            border: none;
-            padding: 5px 10px;
-            margin-top: 5px;
-            display: inline-block;
+    </script>
+
+    <style>
+        /* Dodatkowy styl CSS dla przycisków */
+        .toggle-button {
+            background-color: #850e0e; /* Zielony kolor tła */
+            color: white; /* Biały kolor tekstu */
+            border: none; /* Brak obramowania */
+            padding: 10px 20px; /* Wewnętrzny odstęp */
+            text-align: center; /* Wyśrodkowanie tekstu */
+            text-decoration: none; /* Brak podkreślenia */
+            display: inline-block; /* Wyświetlanie jako blok inline */
+            font-size: 16px; /* Rozmiar czcionki */
+            margin: 10px 0; /* Zewnętrzny margines */
+            cursor: pointer; /* Kursor wskazujący */
         }
     </style>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <div class="tresc">
-        <h2><strong>Obliczanie granic funkcji w punkcie</strong></h2>
-        <ol>
-            <li>Oblicz granicę funkcji \(f(x)=4x^3+2x^2-10x+1\) w punkcie \(x_0=3\).</li> 
-            <button class="pokaz-button">Pokaż rozwiązanie</button>
-            <p class="rozwiazanie">\(\displaystyle\lim_{x \to 3} 4x^3+2x^2-10x+1 = 4 \cdot 3^3 + 2 \cdot 3^2 - 10 \cdot 3 + 1 = 108+18-30+1 = 97\)</p>
-
-            <li>Oblicz granicę funkcji \(f(x)=\dfrac{\sin^2 2x}{7x}\) w punkcie  \(x_0=0\).</li>
-            <button class="pokaz-button">Pokaż rozwiązanie</button>
-            <p class="rozwiazanie">\(\displaystyle \lim_{x \to 0} \frac{\sin^2 2x}{7x} = \left[\frac{0}{0} \right] =  \lim_{x \to 0} \frac{\sin 2x \cdot \sin 2x}{7x} \cdot \frac{2x}{2x} \cdot \frac{2x}{2x}  =  \lim_{x \to 0} \frac{4x^2}{7x} = \lim_{x \to 0} \frac{4x}{7} = \frac{4 \cdot 0}{7} = 0\)</p>
-                                      
-            <li>Oblicz granicę funkcji \(f(x)= \dfrac{x^2 - 27}{x-3}\) w punkcie \(x_0=3\).</li>
-            <button class="pokaz-button">Pokaż rozwiązanie</button>
-            <p class="rozwiazanie">\(\displaystyle \lim_{x \to 3} \frac{x^2 - 27}{x-3} = \left[\frac{0}{0} \right] =  \lim_{x \to 3} \frac{(x - 3)(x + 3)}{x-3} = \lim_{x \to 3} (x + 3) = 3 + 3 = 6\)</p>
-        </ol>
-        <h2 style="margin-top: 40px;"><strong>Obliczanie granic funkcji w nieskończoności</strong></h2>
-        <ol>
-            <li>Oblicz granicę funkcji \(f(x)= x + \dfrac{1}{x^2} \) w \( \infty\).</li>
-            <button class="pokaz-button">Pokaż rozwiązanie</button>
-            <p class="rozwiazanie">\(\displaystyle \lim_{x \to \infty} \left( x + \frac{1}{x^2} \right) = \lim_{x \to \infty} x + \lim_{x \to \infty} \frac{1}{x^2} = \infty + 0 = \infty\)</p>   
-            
-            <li>Oblicz granicę funkcji \(f(x)= \dfrac{x^2-2x+1}{x^2-1} \) w \( \infty\).</li>
-            <button class="pokaz-button">Pokaż rozwiązanie</button>
-            <p class="rozwiazanie">\(\displaystyle \lim_{x \to \infty} \frac{x^2-2x+1}{x^2-1}= \lim_{x \to \infty} \frac{x^2 \left( 1 - \frac{2}{x} + \frac{1}{x^2}\right)}{x^2 \left(1-\frac{1}{x^2}\right)} = \lim_{x \to \infty} \frac{1 - \frac{2}{x} +\frac{1}{x^2}}{1-\frac{1}{x^2}} = \frac{1-0+0}{1-0} = 1\)</p>
-
-            <li>Oblicz granicę funkcji \(f(x)= \dfrac{2x^3 -x^2 +3x -1}{2-x^3} \) w \(- \infty\).</li>
-            <button class="pokaz-button">Pokaż rozwiązanie</button>
-            <p class="rozwiazanie">\(\displaystyle \lim_{x \to -\infty} \frac{2x^3 -x^2 +3x -1}{2-x^3} = \lim_{x \to -\infty} \frac{x^3(2-\frac{1}{x}+\frac{3}{x^2}-\frac{1}{x^3})}{x^3 \left(\frac{2}{x^3}-1 \right)} =\frac{2- \frac{1}{x}+  \frac{3}{x^2}- \frac{1}{x^3}}{\frac{2}{x^3}-1} = -2\)</p>                
-        </ol>
+    <div id="naglowek">
+        <h1>Przykłady obliczania granic funkcji</h1>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const pokazButtons = document.querySelectorAll('.pokaz-button');
-            pokazButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const rozwiazanieElem = this.nextElementSibling;
-                    if (rozwiazanieElem.style.display === 'none' || rozwiazanieElem.style.display === '') {
-                        rozwiazanieElem.style.display = 'block';
-                    } else {
-                        rozwiazanieElem.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
+    <div id="panel">
+        <div id="menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="{{ url_for('strona_glowna') }}"><h3>Strona Główna</h3></a></li>
+                <li><h3>Granice funkcji</h3>
+                    <ul class="submenu">
+                        <li><a href="{{ url_for('twierdzenia') }}">Twierdzenia</a></li>                           
+                        <li><a href="{{ url_for('wzorywlasnosci') }}">Wzory, własności</a></li>                                          
+                        <li><a href="{{ url_for('przyklady_funkcje') }}">Przykłady</a></li>
+                    </ul>
+                </li>
+                <li><h3>Granice ciągów</h3>
+                    <ul class="submenu">
+                        <li><a href="{{ url_for('twierdzenia_ciagi') }}">Twierdzenia</a></li>
+                        <li><a href="{{ url_for('wzorywlasnosci_ciagi') }}">Wzory i własności</a></li>
+                        <li><a href="{{ url_for('przyklady_ciagi') }}">Przykłady</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="tresc">
+            <h2><strong>Zadanie 1. Sprawdzić monotoniczność ciągu o wyrazie ogólnym:</strong></h2>
+            <ol>
+                <li>\( a_n = \frac{2}{n+3} \)</li>
+                <button class="solution-button" onclick="toggleSolution(1)">Pokaż rozwiązanie</button>
+                <div id="solution-1" class="solution">
+                    <p><strong><u>Rozwiązanie:</u></strong></p>
+                    <p>Sprawdzamy znak różnicy \( a_{n+1} - a_n \). Jeśli jest większa od zera to ciąg jest rosnący, jeśli zaś mniejsza od zera to ciąg jest malejący. Wyraz \( a_n = \frac{2}{n+3} \), zaś \( a_{n+1} = \frac{2}{(n+1)+3} = \frac{2}{n+4} \) (w miejsce \( n \) wstawiamy \( n+1 \)). Zatem:</p>
+                    <p>\[
+                        a_{n+1} - a_n = \frac{2}{n+4} - \frac{2}{n+3} = \frac{2(n+3) - 2(n+4)}{(n+4)(n+3)} = \frac{2n + 6 - 2n - 8}{(n+4)(n+3)} = \frac{-2}{(n+4)(n+3)} < 0
+                    \]</p>
+                    <p>gdyż \( n \in \mathbb{N} \), więc mianownik jest dodatni, a licznik ujemny.</p>
+                    <p>Otrzymaliśmy więc, że ciąg o wyrazie ogólnym \( a_n = \frac{2}{n+3} \), jest <strong>malejący</strong>.</p>
+                </div>
+
+                <li>\( a_n = \frac{n+1}{n+2} \)</li>
+                <button class="solution-button" onclick="toggleSolution(2)">Pokaż rozwiązanie</button>
+                <div id="solution-2" class="solution">
+                    <p><strong><u>Rozwiązanie:</u></strong></p>
+                    <p>Sprawdzamy znak różnicy \( a_{n+1} - a_n \). Jeśli jest większa od zera to ciąg jest rosnący, jeśli zaś mniejsza od zera to ciąg jest malejący. Wyraz \( a_n = \frac{n+1}{n+2} \), zaś \( a_{n+1} = \frac{(n+1)+1}{(n+1)+2} = \frac{n+2}{n+3} \) (w miejsce \( n \) wstawiamy \( n+1 \)). Zatem:</p>
+                    <p>\[
+                        a_{n+1} - a_n = \frac{n+2}{n+3} - \frac{n+1}{n+2} = \frac{(n+2)^2 - (n+1)(n+3)}{(n+3)(n+2)} = \frac{n^2 + 4n + 4 - n^2 - 3n - n - 3}{(n+3)(n+2)} = \frac{1}{(n+3)(n+2)} > 0
+                    \]</p>
+                    <p>gdyż \( n \in \mathbb{N} \), więc mianownik jest dodatni i licznik również.</p>
+                    <p>Otrzymaliśmy więc, że ciąg o wyrazie ogólnym \( a_n = \frac{n+1}{n+2} \), jest <strong>rosnący</strong>.</p>
+                </div>
+            </ol>
+
+            <h2><strong>Zadanie 2. Na podstawie definicji granicy ciągu wykazać, że:</strong></h2>
+            <ol>
+                <li>\(\lim_{n \to \infty} \frac{5n-1}{n+2} = 5\)</li>
+                <button class="solution-button" onclick="toggleSolution(3)">Pokaż rozwiązanie</button>
+                <div id="solution-3" class="solution">
+                    <p><strong><u>Rozwiązanie:</u></strong></p>
+                    <p>Mamy, że \(\lim_{n \to \infty} \frac{5n-1}{n+2} = 5\). Niech \(\epsilon\) będzie dowolną liczbą dodatnią. Z definicji granicy ciągu oznacza to, że \(\left| \frac{5n-1}{n+2} - 5 \right| < \epsilon\). Z zależności tej należy wyliczyć \( n \) w zależności od \(\epsilon\). Zatem:</p>
+                    <p>\[
+                        \left| \frac{5n-1}{n+2} - 5 \right| < \epsilon
+                    \]</p>
+                    <p>Przekształcamy wyrażenie wewnątrz wartości bezwzględnej:</p>
+                    <p>\[
+                        \left| \frac{5n-1 - 5(n+2)}{n+2} \right| < \epsilon \implies \left| \frac{-11}{n+2} \right| < \epsilon \implies \frac{11}{n+2} < \epsilon
+                    \]</p>
+                    <p>Możemy pomnożyć nierówność przez \( n+2 \), gdyż \( n+2 > 0 \) dla \( n \in \mathbb{N} \):</p>
+                    <p>\[
+                        11 < \epsilon (n+2) \implies 11 < \epsilon n + 2\epsilon \implies n > \frac{11 - 2\epsilon}{\epsilon}
+                    \]</p>
+                    <p>Zatem dla \( n > \frac{11 - 2\epsilon}{\epsilon} \) przy każdym \(\epsilon > 0\) warunek definicji jest spełniony.</p>
+                </div>
+            </ol>
+        </div>
+    </div>
 </body>
 </html>
