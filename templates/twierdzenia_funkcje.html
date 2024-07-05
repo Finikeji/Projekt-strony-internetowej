@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>Twierdzenia granice funkcji</title>  
+        <meta charset="utf-8">
+        <link href="{{ url_for('static', filename='styl_strony_glownej.css') }}" rel="stylesheet"/>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="naglowek">
+            <h1>Twierdzenia o granicy funkcji</h1>
+        </div>
+        <div id="panel">
+            <div id="menu">
+                <h2>Menu</h2>
+                <ul>
+                    <li><a href="{{ url_for('strona_glowna') }}"><h3>Strona Główna</h3></a></li>
+                    <li><h3>Granice funkcji</h3>
+                        <ul class="submenu">
+                            <li><a href="{{ url_for('twierdzenia') }}">Twierdzenia</a></li>
+                            <!-- <li><a href="#">Twierdzenia</a></li> -->
+                            <li><a href="{{ url_for('wzorywlasnosci') }}">Wzory, własności</a></li>
+                            <!-- <li><a href="#">Wzory, własności</a></li> -->
+                            <!-- <li><a href="#">Przykłady</a></li> -->
+                            <li><a href="{{ url_for('przyklady_funkcje') }}">Przykłady</a></li>
+                        </ul>
+                    </li>
+                    <li><h3>Granice ciągów</h3>
+                        <ul class="submenu">
+                            <li><a href="{{ url_for('twierdzenia_ciagi') }}">Twierdzenia</a></li>
+                            <li><a href="{{ url_for('wzorywlasnosci_ciagi') }}">Wzory i własności</a></li>
+                            <li><a href="{{ url_for('przyklady_ciagi') }}">Przykłady</a></li>
+                            <!-- <li><a href="#">Twierdzenia</a></li> -->
+                            <!-- <li><a href="#">Wzory, własności</a></li>
+                            <li><a href="#">Przykłady</a></li> -->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="tresc">
+                <ol>
+                    <li><strong>Granica w punkcie</strong></li>
+                    Funkcja \(f: A \to \mathbb{R}\) określona na zbiorze \(A \subseteq \mathbb{R}\) ma w punkcie skupienia \(x_0\) tego zbioru granicę równą \(g\), jeżeli spełniony jest jeden z równoważnych warunków<br>
+                    <ul>
+                    <br>
+                        <li><strong>definicja Heinego</strong><br>dla każdego ciągu \((x_n)\) takiego, że dla dowolnego \(n \in \mathbb{N}, x_n \in A, x_n \neq x_0\) oraz \(x_n\) dąży do \(x_0\), ciąg wartości funkcji \((f(x_n))\) dąży do \(g\) gdy \(n \to \infty\);</li>
+            </div>
+        </div>
+    </body>
+</html>

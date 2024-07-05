@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>Strona główna</title>
+        <meta charset="utf-8">
+        <link href="{{ url_for('static', filename='styl_strony_glownej.css') }}" rel="stylesheet"/>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <title>Twierdzenia granic funkcji</title>  
+        <meta charset="utf-8">
+        <link href="{{ url_for('static', filename='styl_twierdzenia_funkcje.css') }}" rel="stylesheet"/>
+
+        <title>Wzory i własności granic funkcji</title>  
+        <meta charset="utf-8">
+        <link href="{{ url_for('static', filename='styl_wzorywlasnosci_funkcje.css') }}" rel="stylesheet"/>
+
+        <title>Przykłady granic funkcji</title>  
+        <meta charset="utf-8">
+        <link href="{{ url_for('static', filename='styl_przyklady_funkcje.css') }}" rel="stylesheet"/>
+
+        <title>Twierdzenia granic ciągów</title>  
+        <meta charset="utf-8">
+        <link href="{{ url_for('static', filename='styl_twierdzenia_ciagi.css') }}" rel="stylesheet"/>
+
+        <title>Wzory i własności granic ciągów</title>  
+        <meta charset="utf-8">
+        <link href="{{ url_for('static', filename='styl_wzorywlasnosci_ciagi.css') }}" rel="stylesheet"/>
+
+        <title>Przykłady granic ciągów</title>  
+        <meta charset="utf-8">
+        <link href="{{ url_for('static', filename='styl_przyklady_ciagi.css') }}" rel="stylesheet"/>
+
+    </head>
+    <body>
+        <div id="naglowek">
+            <h1>Granice ciągów i funkcji</h1>
+        </div>
+            
+        <div id="panel">
+            <div id="menu">
+                <h2>Menu</h2>
+                <ul>
+                    <li><a href="{{ url_for('strona_glowna') }}"><h3>Strona Główna</h3></a></li>
+                    <li><h3>Granice funkcji</h3>
+                        <ul class="submenu">
+                            <li><a href="{{ url_for('twierdzenia') }}">Twierdzenia</a></li>
+                            <li><a href="{{ url_for('wzorywlasnosci') }}">Wzory, własności</a></li>
+                            <li><a href="{{ url_for('przyklady_funkcje') }}">Przykłady</a></li>
+                        </ul>
+                    </li>
+                    <li><h3>Granice ciągów</h3>
+                        <ul class="submenu">
+                            <li><a href="{{ url_for('twierdzenia_ciagi') }}">Twierdzenia</a></li>
+                            <li><a href="{{ url_for('wzorywlasnosci_ciagi') }}">Wzory i własności</a></li>
+                            <li><a href="{{ url_for('przyklady_ciagi') }}">Przykłady</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="tresc">
+                <p>
+                    <h2 >Historia</h2>
+                </p>
+                <ol>
+                    <li><strong>Granice ciągów</strong></li>
+                    Współczesną definicję granicy niezależnie podali:
+                    <ul>
+                        <li>
+                            <div class="content">
+                                <p><strong>Bernard Bolzano</strong>
+                                    był pierwszym, który podał w pełni ścisłą definicję granicy ciągu. Wykazał także, że każdy 
+                                    ograniczony ciąg liczb rzeczywistych posiada podciąg zbieżny <a href="https://pl.wikipedia.org/wiki/Twierdzenie_Bolzana-Weierstrassa">(twierdzenie Bolzana-Weierstrassa)</a>.
+                                </p> 
+                                <img id="Bolzano" src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Bernard_Bolzano.jpg"
+                                alt="Bernard Bolzano"
+                                style="width:30%;"/>
+                            </div>
+                            
+                        </li>
+                        <li>
+                            <div class="content">
+                                <p><strong>Augustin Louis Cauchy</strong>
+                                    sprecyzował m.in. pojęcie zbieżności ciągu. Cauchy sprecyzował też podstawy analizy matematycznej,
+                                    opierając je na pojęciach granicy i ciągłości.
+                                </p>
+                                <img id="Cauchy" src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Augustin_Louis_Cauchy.jpg "
+                                alt="Augustin Louis Cauchy"
+                                style="width:20%;"/>
+                            </div>
+                            
+                        </li>
+                    </ul>
+
+                    <li><strong>Granice funkcji</strong></li>
+                    Łaciński termin oznaczający granicę, <em>limes</em>, pojawił się w <strong>XVII wieku</strong> w pracach Newtona oraz 
+                    Leibniza. Oboje tłumaczyli istnienie granic w różny sposób.
+                    <ul>
+                        <li>
+                            <div class="content">
+                                <p><strong>Isaac Newton</strong>
+                                    porównywał istnienie granicy do ciągłego ruchu, takiego, że <br>
+                                    w każdym konkretnym punkcie czasu istnieje jakaś prędkość. 
+                                </p> 
+                                <img id="Newton" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Sir_Isaac_Newton_by_Sir_Godfrey_Kneller%2C_Bt.jpg/800px-Sir_Isaac_Newton_by_Sir_Godfrey_Kneller%2C_Bt.jpg"
+                                alt="Isaac Newton"
+                                style="width:30%;"/>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="content">
+                                <p><strong>Gottfried Wilhelm Leibniz</strong>
+                                    natomiast tłumaczył granicę na przykładzie krzywych eliptycznych, gdzie parabola dąży do 
+                                    elipsy i może być nieskończenie blisko elipsy, ale nie być jeszcze elipsą.
+                                </p>
+                                <img id="Leibniz" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Gottfried_Wilhelm_von_Leibniz.jpg"
+                                alt="Gottfried Wilhelm Leibniz"
+                                style="width:20%;"/>
+                            </div>
+                        </li>
+                        <li> 
+                            <div class="content">
+                                <p>
+                                    Współczesna definicja granicy funkcji powstała w <strong>XIX wieku</strong> wraz z rozwojem analizy matematycznej. 
+                                    Pierwszą ścisłą definicję granicy funkcji, sformułowaną za pomocą pojęć arytmetycznych, podał <strong>Cauchy</strong>, 
+                                    a współczesne brzmienie nadał jej <strong>Karl Theodor Wilhelm Weierstrass</strong>.
+                                </p>
+                                <img id="Weierstrass" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Karl_Weierstrass.jpg/800px-Karl_Weierstrass.jpg"
+                                alt="Karl Theodor Wilhelm Weierstrass"
+                                style="width:20%;"/>
+                            </div>                        
+                        </li>
+                    </ul>
+                </ol>
+            </div>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>Przykłady</title>  
+        <meta charset="utf-8">
+        <link href="{{ url_for('static', filename='styl_strony_glownej.css') }}" rel="stylesheet"/>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="naglowek">
+            <h1>Przykłady obliczania granic funkcji</h1>
+        </div>
+        <div id="panel">
+            <div id="menu">
+                <h2>Menu</h2>
+                <ul>
+                    <li><a href="{{ url_for('strona_glowna') }}"><h3>Strona Główna</h3></a></li>
+                    <li><h3>Granice funkcji</h3>
+                        <ul class="submenu">
+                            <li><a href="{{ url_for('twierdzenia') }}">Twierdzenia</a></li>                           
+                            <li><a href="{{ url_for('wzorywlasnosci') }}">Wzory, własności</a></li>                                          
+                            <li><a href="{{ url_for('przyklady_funkcje') }}">Przykłady</a></li>
+                        </ul>
+                    </li>
+                    <li><h3>Granice ciągów</h3>
+                        <ul class="submenu">
+                            <li><a href="{{ url_for('twierdzenia_ciagi') }}">Twierdzenia</a></li>
+                            <li><a href="{{ url_for('wzorywlasnosci_ciagi') }}">Wzory i własności</a></li>
+                            <li><a href="{{ url_for('przyklady_ciagi') }}">Przykłady</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tresc">
+                <h2><strong>Obliczanie granic funkcji w punkcie</strong></h2>
+                <ol>
+                    <li>Oblicz granicę funkcji \(f(x)=4x^3+2x^2-10x+1\) w punkcie \(x_0=3\).</li> 
+                    <p><strong><u>Rozwiązanie:</u></strong></p>
+                    <p style="margin-top: 10px; margin-bottom: 60px;">\(\displaystyle\lim_{x \to 3} 4x^3+2x^2-10x+1 = 4 \cdot 3^3 + 2 \cdot 3^2 - 10 \cdot 3 + 1 = 108+18-3+1 = 97\)</p>
+
+                    <li>Oblicz granicę funkcji \(f(x)=\dfrac{\sin^2 2x}{7x}\) w punkcie  \(x_0=0\).</li>
+                    <p><strong><u>Rozwiązanie:</u></strong></p>
+                    <p style="margin-top: 10px; margin-bottom: 60px;">\(\displaystyle \lim_{x \to 0} \frac{\sin^2 2x}{7x} = \left[\frac{0}{0} \right] =  \lim_{x \to 0} \frac{\sin 2x \cdot \sin 2x}{7x} \cdot \frac{2x}{2x} \cdot \frac{2x}{2x}  =  \lim_{x \to 0} \frac{4x^2}{7x} = \lim_{x \to 0} \frac{4x}{7} = \frac{4 \cdot 0}{7} = 0\)</p>
+                                          
+                    <li>Oblicz granicę funkcji \(f(x)= \dfrac{x^2 - 27}{x-3}\) w punkcie \(x_0=3\).</li>
+                    <p><strong><u>Rozwiązanie:</u></strong></p>
+                    <p style="margin-top: 10px; margin-bottom: 60px;">\(\displaystyle \lim_{x \to 3} \frac{x^2 - 27}{x-3} = \left[\frac{0}{0} \right] =  \lim_{x \to 3} \frac{(x - 3)(x^2 + 3x + 9)}{x-3} = \lim_{x \to 3} (x^2 + 3x + 9) = 3^2 + 3 \cdot 3 + 9 = 27\)</p>
+                </ol>
+                <h2 style="margin-top: 40px;"><strong>Obliczanie granic funkcji w nieskończoności</strong></h2>
+                <ol>
+                    <li>Oblicz granicę funkcji \(f(x)= x + \dfrac{1}{x^2} \) w \( \infty\).</li>
+                    <p><strong><u>Rozwiązanie:</u></strong></p>
+                    <p style="margin-top: 10px; margin-bottom: 60px;">\(\displaystyle \lim_{x \to \infty} \left( x + \frac{1}{x^2} \right) = \lim_{x \to \infty} x + \lim_{x \to \infty} \frac{1}{x^2} = \infty + 0 = \infty\)</p>   
+                    
+                    <li>Oblicz granicę funkcji \(f(x)= \dfrac{x^2-2x+1}{x^2-1} \) w \( \infty\).</li>
+                    <p><strong><u>Rozwiązanie:</u></strong></p>
+                    <p style="margin-top: 10px; margin-bottom: 60px;">\(\displaystyle \lim_{x \to \infty} \frac{x^2-2x+1}{x^2-1}= \lim_{x \to \infty} \frac{x^2 \left( 1 - \frac{2}{x} + \frac{1}{x^2}\right)}{x^2 \left(1-\frac{1}{x^2}\right)} = \lim_{x \to \infty} \frac{1 - \frac{2}{x} +\frac{1}{x^2}}{1-\frac{1}{x^2}} = \frac{1-0+0}{1-0} = 1\)</p>
+
+                    <li>Oblicz granicę funkcji \(f(x)= \dfrac{2x^3 -x^2 +3x -1}{2-x^3} \) w \(- \infty\).</li>
+                    <p><strong><u>Rozwiązanie:</u></strong></p>
+                    <p style="margin-top: 10px; margin-bottom: 60px">\(\displaystyle \lim_{x \to -\infty} \frac{2x^3 -x^2 +3x -1}{2-x^3} = \lim_{x \to -\infty} \frac{x^3(2-\frac{1}{x}+\frac{3}{x^2}-\frac{1}{x^3})}{x^3 \left(\frac{2}{x^3}-1 \right)} =\frac{2- \frac{1}{x}+  \frac{3}{x^2}- \frac{1}{x^3}}{\frac{2}{x^3}-1} = -2\) </p>                
+                </ol>
+            </div>
+        </div>
+    </body>
+</html>

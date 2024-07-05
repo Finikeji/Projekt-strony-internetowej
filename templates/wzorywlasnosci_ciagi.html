@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>Wzory i własności granic ciągów</title>  
+        <meta charset="utf-8">
+        <link href="{{ url_for('static', filename='styl_strony_glownej.css') }}" rel="stylesheet"/>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="naglowek">
+            <h1>Wzory i własności granic ciągów</h1>
+        </div>
+        <div id="panel">
+            <div id="menu">
+                <h2>Menu</h2>
+                <ul>
+                    <li><a href="{{ url_for('strona_glowna') }}"><h3>Strona Główna</h3></a></li>
+                    <li><h3>Granice funkcji</h3>
+                        <ul class="submenu">
+                            <li><a href="{{ url_for('twierdzenia') }}">Twierdzenia</a></li>
+                            <!-- <li><a href="#">Twierdzenia</a></li> -->
+                            <li><a href="{{ url_for('wzorywlasnosci') }}">Wzory, własności</a></li>
+                            <!-- <li><a href="#">Wzory, własności</a></li> -->
+                            <!-- <li><a href="#">Przykłady</a></li> -->
+                            <li><a href="{{ url_for('przyklady_funkcje') }}">Przykłady</a></li>
+                        </ul>
+                    </li>
+                    <li><h3>Granice ciągów</h3>
+                        <ul class="submenu">
+                            <li><a href="{{ url_for('twierdzenia_ciagi') }}">Twierdzenia</a></li>
+                            <li><a href="{{ url_for('wzorywlasnosci_ciagi') }}">Wzory i własności</a></li>
+                            <li><a href="{{ url_for('przyklady_ciagi') }}">Przykłady</a></li>
+                            <!-- <li><a href="#">Twierdzenia</a></li> -->
+                            <!-- <li><a href="#">Wzory, własności</a></li>
+                            <li><a href="#">Przykłady</a></li> -->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="tresc">
+                <ol>
+                    <li><strong>Arytmetyka granic</strong></li>
+                    Jeśli ciągi \((a_n), (b_n)\) są ciągami zbieżnymi odpowiednio do \(a\) i \(b\) oraz \(c \in \mathbb{R}\):
+                    <ul>
+                    <br>
+                        <li>\(\displaystyle\lim_{n \to \infty} {a_n+b_n}=a+b\)</li>
+                        <li>\(\displaystyle\lim_{n \to \infty} {c\cdot a_n}=c\cdot \lim_{n \to \infty} {a_n}=\)</li>
+                        <li>\(\displaystyle\lim_{n \to \infty} {a_n\cdot b_n}=a\cdot b\)</li>
+                        <li>\(\displaystyle\lim_{n \to \infty} {\frac{a_n}{b_n}}=\frac{a}{b}\), o ile \(b\neq 0\) oraz \(b_n\neq 0\) dla każdego \(n\)</li>
+                    </ul>
+                    <li><strong>Właściwości granic</strong></li>
+                    <ul>
+                        <li>ciąg zbieżny ma dokładnie jedną granicę</li>
+                        <li>zmiana, dołączenie, usunięcie skończonej liczby wyrazów ciągu nie zmienia granicy</li>
+                        <li>każdy ciąg zbieżny jest ograniczony</li>
+                        <li>\(\displaystyle\forall n\in \mathbb{N} \ a_n\leqslant A\)  i  \(\lim_{n \to \infty}{a_n}=g \Rightarrow g\leqslant A\)</li>
+                        <li>jeśli \(\displaystyle\forall n\in \mathbb{N} \ a_n\leqslant b_n \Rightarrow a\leqslant b\)</li>
+                        <li>\(\displaystyle\lim_{n\to \infty}{a_n}=a \Rightarrow \lim_{n \to \infty}{\vert a_n\vert}=\vert a\vert\) </li>
+                    </ul>
+                    <li><strong>Wartości niektórych granic</strong></li>
+                    <ul>
+                        <li>\(\displaystyle
+                            \lim_{n\to \infty}{a^n} = \begin{cases} 
+                                +\infty & \text{gdy } a\gt 1 \\
+                                1 & \text{gdy } a=1 \\
+                                0 & \text{gdy } \vert a\vert \lt 1 \\
+                                \text{nie istnieje} & \text{gdy } a\leqslant -1
+                            \end{cases}
+                            \)</li>
+                        <li>\(\displaystyle\lim_{n\to \infty}{\sqrt[n]{a}}=1\) o ile \(a\gt 0\)</li>
+                        <li>\(\displaystyle\lim_{n\to \infty}{\sqrt[n]{n}}=1\)</li>
+                        <li>\(\displaystyle
+                            \lim_{n\to \infty}{1+q+q^2+\ldots +q^n} = \begin{cases} 
+                                +\infty & \text{gdy } q\geqslant 1 \\
+                                \frac{1}{1-q} & \text{gdy } \vert q\vert \lt 1 \\
+                                \text{nie istnieje} & \text{gdy } q\leqslant -1
+                            \end{cases}
+                            \)</li>
+                        <li>\(\displaystyle\lim_{n\to \infty}{(1+\frac{1}{n})^n}=e\)</li>
+                    </ul>
+                </ol>
+            </div>
+        </div>
+    </body>
+</html>

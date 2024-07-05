@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>Twierdzenia granice ciągów</title>  
+        <meta charset="utf-8">
+        <link href="{{ url_for('static', filename='styl_strony_glownej.css') }}" rel="stylesheet"/>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="naglowek">
+            <h1>Twierdzenia o granicach ciągów</h1>
+        </div>
+        <div id="panel">
+            <div id="menu">
+                <h2>Menu</h2>
+                <ul>
+                    <li><a href="{{ url_for('strona_glowna') }}"><h3>Strona Główna</h3></a></li>
+                    <li><h3>Granice funkcji</h3>
+                        <ul class="submenu">
+                            <li><a href="{{ url_for('twierdzenia') }}">Twierdzenia</a></li>
+                            <!-- <li><a href="#">Twierdzenia</a></li> -->
+                            <li><a href="{{ url_for('wzorywlasnosci') }}">Wzory, własności</a></li>
+                            <!-- <li><a href="#">Wzory, własności</a></li> -->
+                            <!-- <li><a href="#">Przykłady</a></li> -->
+                            <li><a href="{{ url_for('przyklady_funkcje') }}">Przykłady</a></li>
+                        </ul>
+                    </li>
+                    <li><h3>Granice ciągów</h3>
+                        <ul class="submenu">
+                            <li><a href="{{ url_for('twierdzenia_ciagi') }}">Twierdzenia</a></li>
+                            <li><a href="{{ url_for('wzorywlasnosci_ciagi') }}">Wzory i własności</a></li>
+                            <li><a href="{{ url_for('przyklady_ciagi') }}">Przykłady</a></li>
+                            <!-- <li><a href="#">Twierdzenia</a></li> -->
+                            <!-- <li><a href="#">Wzory, własności</a></li>
+                            <li><a href="#">Przykłady</a></li> -->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="tresc">
+                <ol>
+                    <li><strong>Definicja (Cauchy'ego)</strong></li>
+                    Niech \((a_n)\) będzie nieskończonym ciągiem liczb rzeczywistych lub zespolonych. Liczbę \(g\) nazywa się granicą ciągu \((a_n)\), jeżeli:<br>
+                    <br>
+                    <center>\(\displaystyle\forall \varepsilon \gt0 \ \exists n_0 \in \mathbb{N} \ \forall n\in \mathbb{N} \ (n\gt n_0 \Rightarrow \vert a_n -g\vert \lt \varepsilon)\). </center>
+                    Oznacza się \(\displaystyle\lim_{n \to \infty} {a_n}=g\).<br>
+                    Ciągi mające granice nazywa się zbieżnymi, a pozostałe - rozbieżnymi. Do badania ciągów rozbieżnych stosuje się pojęcie granicy górnej i dolnej, czyli największej i najmniejszej spośród wszystkich granic jego podciągów zbieżnych.
+                    <br>                 
+                    <li style="margin-top: 40px;"><strong>Ciągi rozbieżne</strong></li>
+                    Ciąg \((a_n)\) o wyrazach rzeczywistych ma
+                    <ul>
+                    <br>
+                        <li>granicę niewłaściwą w \(+\infty\), jeżeli \(\displaystyle \ \forall M \in \mathbb{R} \ \exists n_0 \in \mathbb{N} \ \forall n \gt n_0 \ a_n\gt M\),</li>
+                        <li>granicę niewłaściwą w \(-\infty\), jeżeli \(\displaystyle \ \forall M \in \mathbb{R} \ \exists n_0 \in \mathbb{N} \ \forall n \gt n_0 \ a_n\lt M\).</li>
+                    </ul>
+                    <li style="margin-top: 40px;"><strong>Twierdzenie o 3 ciągach</strong></li>
+                    Jeśli 3 ciągi - \(a_n, b_n, c_n\) spełniaja \(\displaystyle\forall n\in \mathbb{N} \ a_n\leqslant b_n	\leqslant c_n\) oraz \(\displaystyle\lim_{n \to \infty} {a_n}=g\) i \(\displaystyle\lim_{n \to \infty} {c_n}=g\), to \(\displaystyle\lim_{n \to \infty} {b_n}=g\).
+                    <li style="margin-top: 40px;"><strong>Twierdzenie o 2 ciągach</strong></li>
+                    Niech \(\displaystyle\forall n\in \mathbb{N} \ a_n\leqslant b_n\)
+                    <ul>
+                    <br>
+                        <li>jeśli \(\displaystyle\lim_{n \to \infty} {a_n}=+\infty\), to \(\displaystyle\lim_{n \to \infty} {b_n}=+\infty\),</li>
+                        <li>jeśli \(\displaystyle\lim_{n \to \infty} {b_n}=-\infty\), to \(\displaystyle\lim_{n \to \infty} {a_n}=-\infty\).</li>
+                    </ul>
+                 </ol>
+            </div>       
+        </div>
+    </body>
+</html>
