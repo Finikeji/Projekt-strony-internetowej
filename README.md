@@ -4,7 +4,7 @@
 Król Irmina
 Skóra Amelia
 Miedzińska Aleksandra
-
+commity z repo z serweru TI
 ![image](https://github.com/Finikeji/Projekt-strony-internetowej/assets/162982424/ba203d21-3f9e-48d6-b24e-944d0cfa4a6c)
 
 
