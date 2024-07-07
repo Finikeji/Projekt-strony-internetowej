@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Rysowanie Granicy</title>
+    <meta charset="utf-8">
+    <link href="{{ url_for('static', filename='styl_strony_glownej.css') }}" rel="stylesheet"/>
+</head>
+<body>
+    <div id="naglowek">
+        <h1>Rysowanie Granicy Ciągu</h1>
+    </div>
+
+    <div id="panel">
+        <div id="menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="{{ url_for('strona_glowna') }}"><h3>Strona Główna</h3></a></li>
+                <li><h3>Granice funkcji</h3>
+                    <ul class="submenu">
+                        <li><a href="{{ url_for('twierdzenia') }}">Twierdzenia</a></li>
+                        <li><a href="{{ url_for('wzorywlasnosci') }}">Wzory, własności</a></li>
+                        <li><a href="{{ url_for('przyklady_funkcje') }}">Przykłady</a></li>
+                    </ul>
+                </li>
+                <li><h3>Granice ciągów</h3>
+                    <ul class="submenu">
+                        <li><a href="{{ url_for('twierdzenia_ciagi') }}">Twierdzenia</a></li>
+                        <li><a href="{{ url_for('wzorywlasnosci_ciagi') }}">Wzory i własności</a></li>
+                        <li><a href="{{ url_for('przyklady_ciagi') }}">Przykłady</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('rysuj_granice') }}"><h3>Rysowanie Granicy</h3></a></li>
+            </ul>
+        </div>
+
+        <div class="tresc">
+            <form method="POST">
+                <label for="granica">Podaj wyrażenie (np. sin(x)/x):</label>
+                <input type="text" id="granica" name="granica" required>
+                <label for="punkt">Podaj punkt (np. 0):</label>
+                <input type="text" id="punkt" name="punkt" required>
+                <button type="submit">Rysuj</button>
+            </form>
+            {% if request.method == 'POST' %}
+                <h3>Wynik:</h3>
+                <img src="{{ url_for('rysuj_granice') }}" alt="Wykres granicy">
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
