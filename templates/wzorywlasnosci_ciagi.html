@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="pl">
     <head>
-        <title>Wzory i własności granic ciągów</title>  
+        <title>Strona główna</title>
         <meta charset="utf-8">
         <link href="{{ url_for('static', filename='styl_strony_glownej.css') }}" rel="stylesheet"/>
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </head>
     <body>
         <div id="naglowek">
-            <h1>Wzory i własności granic ciągów</h1>
+            <h1>Granice ciągów i funkcji</h1>
         </div>
+            
         <div id="panel">
             <div id="menu">
                 <h2>Menu</h2>
@@ -19,10 +19,7 @@
                     <li><h3>Granice funkcji</h3>
                         <ul class="submenu">
                             <li><a href="{{ url_for('twierdzenia') }}">Twierdzenia</a></li>
-                            <!-- <li><a href="#">Twierdzenia</a></li> -->
                             <li><a href="{{ url_for('wzorywlasnosci') }}">Wzory, własności</a></li>
-                            <!-- <li><a href="#">Wzory, własności</a></li> -->
-                            <!-- <li><a href="#">Przykłady</a></li> -->
                             <li><a href="{{ url_for('przyklady_funkcje') }}">Przykłady</a></li>
                         </ul>
                     </li>
@@ -31,11 +28,9 @@
                             <li><a href="{{ url_for('twierdzenia_ciagi') }}">Twierdzenia</a></li>
                             <li><a href="{{ url_for('wzorywlasnosci_ciagi') }}">Wzory i własności</a></li>
                             <li><a href="{{ url_for('przyklady_ciagi') }}">Przykłady</a></li>
-                            <!-- <li><a href="#">Twierdzenia</a></li> -->
-                            <!-- <li><a href="#">Wzory, własności</a></li>
-                            <li><a href="#">Przykłady</a></li> -->
                         </ul>
                     </li>
+                    <li><a href="{{ url_for('rysuj_granice') }}"><h3>Rysowanie Granicy</h3></a></li>
                 </ul>
             </div>
             <div class="tresc">

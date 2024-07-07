@@ -1,77 +1,38 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <title>Przykłady</title>  
-    <meta charset="utf-8">
-    <link href="{{ url_for('static', filename='styl_strony_glownej.css') }}" rel="stylesheet"/>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-    <!-- JavaScript dla przycisków "Pokaż rozwiązanie" -->
-    <script>
-        function toggleSolution(index) {
-            var solution = document.getElementById('solution-' + index);
-            if (solution.style.display === 'none') {
-                solution.style.display = 'block';
-            } else {
-                solution.style.display = 'none';
-            }
-        }
-    </script>
-
-    <style>
-        /* Styl dla przycisków */
-        .toggle-button {
-            background-color: #850e0e;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 10px 0;
-            cursor: pointer;
-        }
-
-        .solution {
-            display: none;
-            margin-top: 10px;
-            margin-bottom: 60px;
-        }
-
-        /* Styl dla treści */
-        #tresc {
-            margin-left: 20px; /* Dostosowanie marginesu, aby treści były w tych samych miejscach */
-            margin-right: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div id="naglowek">
-        <h1>Przykłady obliczania granic ciągów</h1>
-    </div>
-    <div id="panel">
-        <div id="menu">
-            <h2>Menu</h2>
-            <ul>
-                <li><a href="{{ url_for('strona_glowna') }}"><h3>Strona Główna</h3></a></li>
-                <li><h3>Granice funkcji</h3>
-                    <ul class="submenu">
-                        <li><a href="{{ url_for('twierdzenia') }}">Twierdzenia</a></li>                           
-                        <li><a href="{{ url_for('wzorywlasnosci') }}">Wzory, własności</a></li>                                          
-                        <li><a href="{{ url_for('przyklady_funkcje') }}">Przykłady</a></li>
-                    </ul>
-                </li>
-                <li><h3>Granice ciągów</h3>
-                    <ul class="submenu">
-                        <li><a href="{{ url_for('twierdzenia_ciagi') }}">Twierdzenia</a></li>
-                        <li><a href="{{ url_for('wzorywlasnosci_ciagi') }}">Wzory i własności</a></li>
-                        <li><a href="{{ url_for('przyklady_ciagi') }}">Przykłady</a></li>
-                    </ul>
-                </li>
-            </ul>
+    <head>
+        <title>Strona główna</title>
+        <meta charset="utf-8">
+        <link href="{{ url_for('static', filename='styl_strony_glownej.css') }}" rel="stylesheet"/>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="naglowek">
+            <h1>Granice ciągów i funkcji</h1>
         </div>
+            
+        <div id="panel">
+            <div id="menu">
+                <h2>Menu</h2>
+                <ul>
+                    <li><a href="{{ url_for('strona_glowna') }}"><h3>Strona Główna</h3></a></li>
+                    <li><h3>Granice funkcji</h3>
+                        <ul class="submenu">
+                            <li><a href="{{ url_for('twierdzenia') }}">Twierdzenia</a></li>
+                            <li><a href="{{ url_for('wzorywlasnosci') }}">Wzory, własności</a></li>
+                            <li><a href="{{ url_for('przyklady_funkcje') }}">Przykłady</a></li>
+                        </ul>
+                    </li>
+                    <li><h3>Granice ciągów</h3>
+                        <ul class="submenu">
+                            <li><a href="{{ url_for('twierdzenia_ciagi') }}">Twierdzenia</a></li>
+                            <li><a href="{{ url_for('wzorywlasnosci_ciagi') }}">Wzory i własności</a></li>
+                            <li><a href="{{ url_for('przyklady_ciagi') }}">Przykłady</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ url_for('rysuj_granice') }}"><h3>Rysowanie Granicy</h3></a></li>
+                </ul>
+            </div>
         <div id="tresc">
             <h2><strong>Zadanie 1. Sprawdzić monotoniczność ciągu o wyrazie ogólnym:</strong></h2>
             <ol>

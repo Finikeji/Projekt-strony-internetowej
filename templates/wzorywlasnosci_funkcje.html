@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="pl">
     <head>
-        <title>Wzory i własności granic funkcji</title>  
+        <title>Strona główna</title>
         <meta charset="utf-8">
         <link href="{{ url_for('static', filename='styl_strony_glownej.css') }}" rel="stylesheet"/>
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </head>
     <body>
         <div id="naglowek">
-            <h1>Wzory i własności granic funkcji</h1>
+            <h1>Granice ciągów i funkcji</h1>
         </div>
+            
         <div id="panel">
             <div id="menu">
                 <h2>Menu</h2>
@@ -30,6 +30,7 @@
                             <li><a href="{{ url_for('przyklady_ciagi') }}">Przykłady</a></li>
                         </ul>
                     </li>
+                    <li><a href="{{ url_for('rysuj_granice') }}"><h3>Rysowanie Granicy</h3></a></li>
                 </ul>
             </div>
 
